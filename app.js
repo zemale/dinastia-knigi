@@ -438,24 +438,36 @@ function restartQuiz() {
 function setupArticles() {
     document.querySelectorAll('.read-more').forEach(btn => {
         btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
             const card = e.target.closest('.article-card');
             const articleKey = card.dataset.article;
             const article = articles[articleKey];
             
-            articleBody.innerHTML = article.content;
-            articleModal.classList.remove('hidden');
+            if (articleBody && articleModal) {
+                articleBody.innerHTML = article.content;
+                articleModal.classList.remove('hidden');
+            }
         });
     });
 
-    document.querySelector('.modal-close').addEventListener('click', () => {
-        articleModal.classList.add('hidden');
-    });
+    const modalClose = document.querySelector('.modal-close');
+    if (modalClose) {
+        modalClose.addEventListener('click', () => {
+            if (articleModal) {
+                articleModal.classList.add('hidden');
+            }
+        });
+    }
 
-    articleModal.addEventListener('click', (e) => {
-        if (e.target === articleModal) {
-            articleModal.classList.add('hidden');
-        }
-    });
+    if (articleModal) {
+        articleModal.addEventListener('click', (e) => {
+            if (e.target === articleModal) {
+                articleModal.classList.add('hidden');
+            }
+        });
+    }
 }
 
 // Запуск
