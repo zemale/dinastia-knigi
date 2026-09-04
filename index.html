@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Династия книголюбов</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">📚</span>
+                <h1>Династия книголюбов</h1>
+            </div>
+            <nav class="nav">
+                <a href="#test" class="nav-link">Тест</a>
+                <a href="#articles" class="nav-link">Статьи</a>
+                <a href="#about" class="nav-link">О проекте</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Найди свою книгу</h2>
+            <p class="hero-subtitle">Ответь на несколько вопросов — и мы подберём произведение, которое тебя увлечёт</p>
+            <a href="#test" class="btn btn-primary">Пройти тест</a>
+        </div>
+        <div class="hero-decoration">
+            <div class="book-spine"></div>
+            <div class="book-spine"></div>
+            <div class="book-spine"></div>
+        </div>
+    </section>
+
+    <section id="test" class="test-section">
+        <div class="container">
+            <h2 class="section-title">Литературный компас</h2>
+            <p class="section-subtitle">Ответь честно — и мы найдём идеальное произведение для тебя</p>
+            
+            <div id="quiz-container">
+                <!-- Вопросы будут здесь -->
+            </div>
+            
+            <div id="result-container" class="hidden">
+                <!-- Результат будет здесь -->
+            </div>
+        </div>
+    </section>
+
+    <section id="articles" class="articles-section">
+        <div class="container">
+            <h2 class="section-title">Полезные статьи</h2>
+            <p class="section-subtitle">Советы для настоящих книголюбов</p>
+            
+            <div class="articles-grid">
+                <article class="article-card" data-article="grounding">
+                    <div class="article-icon">🌿</div>
+                    <h3>Как заземлиться после прочтения книги</h3>
+                    <p>Вернуться в реальность, когда история затянула слишком сильно</p>
+                    <button class="btn btn-secondary read-more">Читать</button>
+                </article>
+                
+                <article class="article-card" data-article="emptiness">
+                    <div class="article-icon">🌑</div>
+                    <h3>Как избавиться от чувства опустошённости</h3>
+                    <p>Когда книга закончилась, а душа требует продолжения</p>
+                    <button class="btn btn-secondary read-more">Читать</button>
+                </article>
+                
+                <article class="article-card" data-article="motivation">
+                    <div class="article-icon">⚡</div>
+                    <h3>Как замотивировать себя читать</h3>
+                    <p>Простые способы вернуть радость от чтения</p>
+                    <button class="btn btn-secondary read-more">Читать</button>
+                </article>
+                
+                <article class="article-card" data-article="disappointment">
+                    <div class="article-icon">💔</div>
+                    <h3>Как избавиться от разочарованности в книге</h3>
+                    <p>Когда ожидания не оправдались: что делать?</p>
+                    <button class="btn btn-secondary read-more">Читать</button>
+                </article>
+            </div>
+            
+            <div id="article-modal" class="modal hidden">
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <div id="article-body"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">О проекте</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p><strong>«Династия книголюбов»</strong> — проект школы «Династия», созданный при поддержке учителя литературы Марии Антоновны.</p>
+                    <p>Мы верим, что каждый человек может найти свою книгу — ту, которая изменит взгляд на мир, подарит новые эмоции и станет другом на всю жизнь.</p>
+                    <p>Наш тест помогает подобрать произведение по интересам, возрасту и настроению. А статьи — справиться с «послекнижным синдромом» и вдохновиться на новые открытия.</p>
+                </div>
+                <div class="about-decoration">
+                    <div class="quote">
+                        <blockquote>«Книги — это корабли мысли, странствующие по волнам времени и бережно несущие свой драгоценный груз от поколения к поколению»</blockquote>
+                        <cite>— Фрэнсис Бэкон</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Школа «Династия» • Проект с учителем литературы Марией Антоновной</p>
+            <p class="footer-year">2025</p>
+        </div>
+    </footer>
+
+    <script src="books.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

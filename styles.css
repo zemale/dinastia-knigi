@@ -1,0 +1,629 @@
+/* === БАЗОВЫЕ НАСТРОЙКИ === */
+:root {
+    --bordeaux: #722F37;
+    --bordeaux-dark: #4A1A20;
+    --bordeaux-light: #8B3A44;
+    --gold: #C9A227;
+    --gold-light: #D4AF37;
+    --gold-pale: #F4E4BC;
+    --cream: #FDF6E3;
+    --cream-dark: #F5ECD7;
+    --text-dark: #2C1810;
+    --text-light: #6B4423;
+    --white: #FFFFFF;
+    --shadow: rgba(74, 26, 32, 0.15);
+    --shadow-strong: rgba(74, 26, 32, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-dark);
+    background: var(--cream);
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* === ШАПКА === */
+.header {
+    background: var(--bordeaux);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px var(--shadow-strong);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 2rem;
+}
+
+.logo h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.nav {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    color: var(--gold-pale);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--gold);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* === ГЛАВНЫЙ ЭКРАН === */
+.hero {
+    background: var(--bordeaux-dark);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 24px;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px var(--shadow-strong);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--gold-pale);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.hero-decoration {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 8px;
+    opacity: 0.15;
+}
+
+.book-spine {
+    width: 40px;
+    height: 200px;
+    background: var(--gold);
+    border-radius: 4px;
+}
+
+.book-spine:nth-child(2) {
+    height: 240px;
+    margin-top: -20px;
+}
+
+.book-spine:nth-child(3) {
+    height: 180px;
+    margin-top: 10px;
+}
+
+/* === КНОПКИ === */
+.btn {
+    display: inline-block;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--bordeaux-dark);
+    box-shadow: 0 4px 20px rgba(201, 162, 39, 0.4);
+}
+
+.btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(201, 162, 39, 0.5);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--bordeaux);
+    border: 2px solid var(--bordeaux);
+}
+
+.btn-secondary:hover {
+    background: var(--bordeaux);
+    color: var(--gold);
+}
+
+/* === СЕКЦИИ === */
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--bordeaux);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+/* === ТЕСТ === */
+.test-section {
+    padding: 80px 0;
+    background: var(--cream);
+}
+
+.quiz-progress {
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.progress-bar {
+    height: 6px;
+    background: var(--cream-dark);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    text-align: center;
+    margin-top: 10px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.question-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 10px 40px var(--shadow);
+    border: 1px solid var(--gold-pale);
+}
+
+.question-number {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.question-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--bordeaux);
+    margin-bottom: 30px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    background: var(--cream);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-dark);
+}
+
+.option:hover {
+    border-color: var(--gold);
+    background: var(--gold-pale);
+}
+
+.option.selected {
+    border-color: var(--bordeaux);
+    background: var(--bordeaux);
+    color: var(--gold);
+    transform: scale(1.02);
+}
+
+/* === РЕЗУЛЬТАТ === */
+.result-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 15px 50px var(--shadow);
+    text-align: center;
+    border: 2px solid var(--gold);
+}
+
+.result-badge {
+    display: inline-block;
+    background: var(--bordeaux);
+    color: var(--gold);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+}
+
+.result-book-cover {
+    width: 200px;
+    height: 300px;
+    margin: 0 auto 30px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px var(--shadow-strong);
+}
+
+.result-book-placeholder {
+    width: 200px;
+    height: 300px;
+    margin: 0 auto 30px;
+    background: var(--bordeaux);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px var(--shadow-strong);
+}
+
+.result-book-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--bordeaux);
+    margin-bottom: 8px;
+}
+
+.result-author {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.result-description {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.result-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.tag {
+    background: var(--cream-dark);
+    color: var(--bordeaux);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* === СТАТЬИ === */
+.articles-section {
+    padding: 80px 0;
+    background: var(--cream-dark);
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.article-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 8px 30px var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--gold-pale);
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-strong);
+}
+
+.article-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.article-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--bordeaux);
+    margin-bottom: 12px;
+}
+
+.article-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+/* === МОДАЛЬНОЕ ОКНО === */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(74, 26, 32, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 24px;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 50px;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px var(--shadow-strong);
+    border: 2px solid var(--gold);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--bordeaux);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: var(--gold);
+}
+
+.article-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--bordeaux);
+    margin-bottom: 24px;
+}
+
+.article-body p {
+    margin-bottom: 16px;
+    line-height: 1.9;
+}
+
+.article-body ul {
+    margin: 16px 0;
+    padding-left: 24px;
+}
+
+.article-body li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+/* === О ПРОЕКТЕ === */
+.about-section {
+    padding: 80px 0;
+    background: var(--bordeaux);
+    color: var(--gold-pale);
+}
+
+.about-section .section-title {
+    color: var(--gold);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.about-text strong {
+    color: var(--gold);
+}
+
+.quote {
+    background: rgba(201, 162, 39, 0.1);
+    border-left: 4px solid var(--gold);
+    padding: 30px;
+    border-radius: 0 16px 16px 0;
+}
+
+.quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--gold-pale);
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.quote cite {
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* === ПОДВАЛ === */
+.footer {
+    background: var(--bordeaux-dark);
+    padding: 30px 0;
+    text-align: center;
+    color: var(--gold-pale);
+}
+
+.footer p {
+    margin-bottom: 8px;
+}
+
+.footer-year {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* === УТИЛИТЫ === */
+.hidden {
+    display: none !important;
+}
+
+/* === АДАПТИВ === */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-decoration {
+        display: none;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .nav {
+        gap: 16px;
+    }
+    
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .question-card,
+    .result-card,
+    .modal-content {
+        padding: 24px;
+    }
+    
+    .result-book-cover {
+        width: 150px;
+        height: 225px;
+    }
+}
