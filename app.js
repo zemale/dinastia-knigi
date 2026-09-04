@@ -1,59 +1,4 @@
-// Вопросы мини-теста
-const miniQuestions = [
-    {
-        id: 'age',
-        text: 'Сколько тебе лет?',
-        options: [
-            { value: '10-12', label: '10–12 лет' },
-            { value: '13-15', label: '13–15 лет' },
-            { value: '16+', label: '16 лет и старше' }
-        ]
-    },
-    {
-        id: 'interest',
-        text: 'Какие книги тебе обычно нравятся?',
-        options: [
-            { value: 'fantasy', label: '🧙‍♂️ Магия, фэнтези, волшебные миры' },
-            { value: 'love', label: '💕 Истории о любви и отношениях' },
-            { value: 'adventure', label: '⚔️ Приключения, путешествия, опасности' },
-            { value: 'philosophy', label: '🤔 Философия, размышления о жизни' },
-            { value: 'mystery', label: '🔍 Тайны, загадки, детективы' },
-            { value: 'humor', label: '😄 Юмор, сатира, смешные истории' },
-            { value: 'social', label: '🌍 Истории о обществе и людях' },
-            { value: 'psychology', label: '🧠 Психология, внутренний мир человека' }
-        ]
-    },
-    {
-        id: 'mood',
-        text: 'Какое настроение у тебя сейчас?',
-        options: [
-            { value: 'happy', label: '😊 Хочу что-то светлое и радостное' },
-            { value: 'thoughtful', label: '🤔 Хочу задуматься о чём-то важном' },
-            { value: 'excited', label: '🤩 Хочу ярких приключений и эмоций' },
-            { value: 'romantic', label: '🥰 Хочу романтики и тёплых чувств' },
-            { value: 'serious', label: '😐 Хочу серьёзную, глубокую историю' }
-        ]
-    },
-    {
-        id: 'time',
-        text: 'Сколько времени готов уделить чтению?',
-        options: [
-            { value: 'short', label: '📖 Хочу что-то короткое (повесть)' },
-            { value: 'medium', label: '📚 Средний роман — самое то' },
-            { value: 'long', label: '📚📚📚 Готов к большой книге!' }
-        ]
-    },
-    {
-        id: 'motivation',
-        text: 'Что для тебя главное в книге?',
-        options: [
-            { value: 'plot', label: '🎬 Захватывающий сюжет' },
-            { value: 'characters', label: '👥 Интересные персонажи' },
-            { value: 'language', label: '📝 Красивый язык' },
-            { value: 'themes', label: '💭 Глубокие темы' }
-        ]
-    }
-];
+
 
 // Вопросы основного теста (30+ вопросов)
 const questions = [
@@ -464,88 +409,13 @@ const articleBody = document.getElementById('article-body');
 
 // Инициализация
 function init() {
-    showTestSelection();
+    showQuestion(0);
     setupArticles();
 }
 
-// Показать выбор теста
-function showTestSelection() {
-    quizContainer.innerHTML = `
-        <div class="test-selection">
-            <h3>Выберите тип теста</h3>
-            <div class="test-options">
-                <div class="test-option-card">
-                    <div class="test-option-icon">⚡</div>
-                    <h4>Мини-тест</h4>
-                    <p>Быстрая рекомендация для тех, у кого мало времени</p>
-                    <ul class="test-features">
-                        <li>5 вопросов</li>
-                        <li>1-2 минуты</li>
-                        <li>Общая рекомендация</li>
-                    </ul>
-                    <button class="btn btn-primary" onclick="startMiniTest()">Начать мини-тест</button>
-                </div>
-                <div class="test-option-card">
-                    <div class="test-option-icon">🔍</div>
-                    <h4>Основной тест</h4>
-                    <p>Точная рекомендация с глубоким анализом</p>
-                    <ul class="test-features">
-                        <li>30+ вопросов</li>
-                        <li>5-10 минут</li>
-                        <li>Детальный подбор</li>
-                    </ul>
-                    <button class="btn btn-primary" onclick="startMainTest()">Начать основной тест</button>
-                </div>
-            </div>
-        </div>
-    `;
-}
 
-// Начать мини-тест
-function startMiniTest() {
-    currentQuestion = 0;
-    answers = {};
-    showMiniQuestion(0);
-}
 
-// Начать основной тест
-function startMainTest() {
-    currentQuestion = 0;
-    answers = {};
-    showQuestion(0);
-}
 
-// Показать вопрос мини-теста
-function showMiniQuestion(index) {
-    if (index >= miniQuestions.length) {
-        showMiniResult();
-        return;
-    }
-
-    const q = miniQuestions[index];
-    const progress = ((index + 1) / miniQuestions.length) * 100;
-    
-    quizContainer.innerHTML = `
-        <div class="quiz-progress">
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: ${progress}%"></div>
-            </div>
-            <div class="progress-text">Вопрос ${index + 1} из ${miniQuestions.length} • Мини-тест</div>
-        </div>
-        <div class="question-card">
-            <div class="question-number">Вопрос ${index + 1}</div>
-            <h3 class="question-title">${q.text}</h3>
-            <div class="options">
-                ${q.options.map(opt => `
-                    <button class="option" data-value="${opt.value}">${opt.label}</button>
-                `).join('')}
-            </div>
-        </div>
-    `;
-
-    // Обработчики для опций
-    setupOptionHandlers('mini');
-}
 
 // Показать вопрос
 function showQuestion(index) {
