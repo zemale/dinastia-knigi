@@ -226,6 +226,81 @@ body {
     background: var(--cream);
 }
 
+/* Выбор типа теста */
+.test-selection {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.test-selection h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: var(--bordeaux);
+    margin-bottom: 3rem;
+}
+
+.test-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.test-option-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 2px solid var(--bordeaux);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.test-option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.test-option-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.test-option-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--bordeaux);
+    margin-bottom: 0.5rem;
+}
+
+.test-option-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.test-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.test-features li {
+    padding: 0.5rem 0;
+    color: var(--text-dark);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.test-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: bold;
+}
+
 .quiz-progress {
     max-width: 600px;
     margin: 0 auto 40px;
@@ -310,6 +385,45 @@ body {
     transform: scale(1.02);
 }
 
+/* Карточные опции для основного теста */
+.card-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.card-option {
+    padding: 1.5rem;
+    border: 2px solid var(--bordeaux);
+    border-radius: 12px;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-option:hover {
+    background: var(--gold-pale);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px var(--shadow);
+}
+
+.card-option .card-emoji {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-option.selected {
+    background: var(--bordeaux);
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
 /* === РЕЗУЛЬТАТ === */
 .result-card {
     background: var(--white);
@@ -390,6 +504,14 @@ body {
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 30px;
+}
+
+/* Кнопки действий в результате */
+.result-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .tag {
