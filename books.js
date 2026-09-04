@@ -227,5 +227,113 @@ const books = [
         interests: ['social', 'drama', 'philosophy'],
         mood: ['serious', 'thoughtful'],
         time: 'medium'
+    },
+    {
+        id: 'sherlock',
+        title: 'Приключения Шерлока Холмса',
+        author: 'Артур Конан Дойль',
+        cover: 'covers/sherlock.jpg',
+        description: 'Сборник детективных рассказов о великом сыщике Шерлоке Холмсе и его верном докторе Ватсоне. Логика, дедукция и захватывающие расследования.',
+        age: '13-15',
+        tags: ['Детектив', 'Приключения', 'Логика', 'Классика'],
+        interests: ['mystery', 'adventure', 'philosophy'],
+        mood: ['excited', 'thoughtful'],
+        time: 'medium'
+    },
+    {
+        id: 'siddhartha',
+        title: 'Сиддхартха',
+        author: 'Герман Гессе',
+        cover: 'covers/siddhartha.jpg',
+        description: 'Философский роман о духовном поиске молодого брахмана Сиддхартхи. Он покидает дом, ищет просветление и проходит через любовь, богатство и нищету.',
+        age: '16+',
+        tags: ['Философия', 'Духовность', 'Взросление', 'Классика'],
+        interests: ['philosophy', 'psychology', 'drama'],
+        mood: ['serious', 'thoughtful'],
+        time: 'medium'
+    },
+    {
+        id: 'brave-new-world',
+        title: 'О дивный новый мир',
+        author: 'Олдос Хаксли',
+        cover: 'covers/brave-new-world.jpg',
+        description: 'Антиутопия о будущем мире, где люди создаются в пробирках, а счастье достигается через наркотики и развлечения. Книга о свободе, счастье и цене прогресса.',
+        age: '16+',
+        tags: ['Антиутопия', 'Философия', 'Научная фантастика', 'Социальная драма'],
+        interests: ['philosophy', 'social', 'drama'],
+        mood: ['serious', 'thoughtful'],
+        time: 'medium'
+    },
+    {
+        id: 'pride',
+        title: 'Гордость и предубеждение',
+        author: 'Джейн Остин',
+        cover: 'covers/pride.jpg',
+        description: 'Остроумный роман о любви и заблуждениях в английском провинциальном обществе. Элизабет Беннет встречает гордого мистера Дарси — и между ними возникает цепь недопониманий.',
+        age: '13-15',
+        tags: ['Романтика', 'Классика', 'Юмор', 'Семья'],
+        interests: ['love', 'family', 'humor'],
+        mood: ['romantic', 'happy'],
+        time: 'medium'
+    },
+    {
+        id: 'dune',
+        title: 'Дюна',
+        author: 'Фрэнк Герберт',
+        cover: 'covers/dune.jpg',
+        description: 'Эпическое фэнтези-научная фантастика о молодом Поле Атрейдесе, который становится лидером пустынного народа и борется за контроль над планетой Арракис.',
+        age: '16+',
+        tags: ['Фантастика', 'Фэнтези', 'Политика', 'Приключения'],
+        interests: ['fantasy', 'adventure', 'philosophy'],
+        mood: ['excited', 'thoughtful'],
+        time: 'long'
+    },
+    {
+        id: 'little-women',
+        title: 'Маленькие женщины',
+        author: 'Луиза Мэй Олкотт',
+        cover: 'covers/little-women.jpg',
+        description: 'История четырёх сестёр Марч — Мэг, Джо, Бет и Эми — которые растут в Америке Гражданской войны. Книга о семье, дружбе, мечтах и взрослении.',
+        age: '10-12',
+        tags: ['Семья', 'Взросление', 'Романтика', 'Классика'],
+        interests: ['family', 'love', 'friendship'],
+        mood: ['happy', 'romantic'],
+        time: 'medium'
+    },
+    {
+        id: 'strange-case',
+        title: 'Странный случай доктора Джекилла и мистера Хайда',
+        author: 'Роберт Льюис Стивенсон',
+        cover: 'covers/strange-case.jpg',
+        description: 'Готический роман о добром докторе Джекилле, который открывает сыворотку, высвобождающую его тёмное альтер-эго мистера Хайда. Книга о двойственности человеческой натуры.',
+        age: '13-15',
+        tags: ['Готика', 'Психология', 'Ужасы', 'Философия'],
+        interests: ['philosophy', 'psychology', 'mystery'],
+        mood: ['serious', 'excited'],
+        time: 'short'
+    },
+    {
+        id: 'don-quixote',
+        title: 'Дон Кихот',
+        author: 'Мигель де Сервантес',
+        cover: 'covers/don-quixote.jpg',
+        description: 'Роман о старом дворянине, который принимает рыцарские романы за реальность и отправляется в приключения. Смешная и грустная история о мечтах и реальности.',
+        age: '16+',
+        tags: ['Сатира', 'Приключения', 'Философия', 'Классика'],
+        interests: ['humor', 'adventure', 'philosophy'],
+        mood: ['happy', 'thoughtful'],
+        time: 'long'
+    },
+    {
+        id: 'hunger-games',
+        title: 'Голодные игры',
+        author: 'Сьюзен Коллинз',
+        cover: 'covers/hunger-games.jpg',
+        description: 'Дистопия о будущем, где подростки должны участвовать в смертельных играх на выживание. История Кэтнис Эвердин, которая борется за свободу и справедливость.',
+        age: '13-15',
+        tags: ['Антиутопия', 'Приключения', 'Драма', 'Социальная справедливость'],
+        interests: ['adventure', 'drama', 'social'],
+        mood: ['excited', 'serious'],
+        time: 'medium'
     }
 ];

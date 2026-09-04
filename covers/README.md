@@ -21,5 +21,14 @@
 - `kite-runner.jpg` — Бегущий с ветром
 - `hobbit.jpg` — Хоббит
 - `mockingbird.jpg` — Убить пересмешника
+- `sherlock.jpg` — Приключения Шерлока Холмса
+- `siddhartha.jpg` — Сиддхартха
+- `brave-new-world.jpg` — О дивный новый мир
+- `pride.jpg` — Гордость и предубеждение
+- `dune.jpg` — Дюна
+- `little-women.jpg` — Маленькие женщины
+- `strange-case.jpg` — Странный случай доктора Джекилла
+- `don-quixote.jpg` — Дон Кихот
+- `hunger-games.jpg` — Голодные игры
 
 Если обложки не найдены, сайт покажет placeholder с названием книги.
