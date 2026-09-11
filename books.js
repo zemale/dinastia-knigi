@@ -443,5 +443,89 @@ const books = [
         interests: ['philosophy', 'adventure', 'drama'],
         mood: ['thoughtful', 'serious'],
         time: 'medium'
+    },
+    {
+        id: 'chronicles-narnia',
+        title: 'Лев, Колдунья и волшебный шкаф',
+        author: 'Клайв С. Льюис',
+        cover: 'covers/narnia.jpg',
+        description: 'Первая книга из серии о волшебной стране Нарнии, где дети открывают мир говорящих животных, волшебства и битвы добра со злом.',
+        age: '10-12',
+        tags: ['Фэнтези', 'Приключения', 'Волшебство', 'Классика'],
+        interests: ['fantasy', 'adventure', 'magic'],
+        mood: ['excited', 'happy'],
+        time: 'medium'
+    },
+    {
+        id: 'percy-jackson',
+        title: 'Перси Джексон и Лабиринт смерти',
+        author: 'Рик Риордан',
+        cover: 'covers/percy.jpg',
+        description: 'Подросток с божественной кровью отправляется в опасное путешествие по подземному лабиринту, чтобы спасти богиню.',
+        age: '13-15',
+        tags: ['Фэнтези', 'Приключения', 'Мифология', 'Драма'],
+        interests: ['fantasy', 'adventure', 'mythology'],
+        mood: ['excited', 'serious'],
+        time: 'medium'
+    },
+    {
+        id: 'hobbit',
+        title: 'Хоббит',
+        author: 'Дж. Р. Р. Толкин',
+        cover: 'covers/hobbit.jpg',
+        description: 'Приключения хоббита Бильбо Бэггинса, который отправляется в опасное путешествие, чтобы найти сокровища дракона Смауга.',
+        age: '10-12',
+        tags: ['Фэнтези', 'Приключения', 'Дружба', 'Сказка'],
+        interests: ['fantasy', 'adventure', 'friendship'],
+        mood: ['happy', 'excited'],
+        time: 'medium'
+    },
+    {
+        id: 'shadow-of-the-wind',
+        title: 'Тень ветра',
+        author: 'Карлос Руис Сафон',
+        cover: 'covers/shadow.jpg',
+        description: 'Мистическая история о мальчике, который находит загадочную книгу в "Кладбище забытых книг" и погружается в мир тайн и любви.',
+        age: '16+',
+        tags: ['Мистика', 'Романтика', 'Драма', 'Детектив'],
+        interests: ['mystery', 'love', 'drama'],
+        mood: ['romantic', 'thoughtful'],
+        time: 'long'
+    },
+    {
+        id: 'alchemist',
+        title: 'Алхимик',
+        author: 'Пауло Коэльо',
+        cover: 'covers/alchemist.jpg',
+        description: 'Философская притча о пастухе Сантьяго, который отправляется на поиски сокровищ и обретает гораздо большее.',
+        age: '13-15',
+        tags: ['Философия', 'Приключения', 'Духовность', 'Взросление'],
+        interests: ['philosophy', 'adventure', 'psychology'],
+        mood: ['thoughtful', 'happy'],
+        time: 'short'
+    },
+    {
+        id: 'house-of-spirits',
+        title: 'Дом духов',
+        author: 'Исабель Альенде',
+        cover: 'covers/house-spirits.jpg',
+        description: 'Семейная сага о жизни в Латинской Америке через поколения, полная магии, любви и политических потрясений.',
+        age: '16+',
+        tags: ['Семейная сага', 'Магический реализм', 'История', 'Драма'],
+        interests: ['family', 'social', 'drama'],
+        mood: ['serious', 'thoughtful'],
+        time: 'long'
+    },
+    {
+        id: 'little-women',
+        title: 'Маленькие женщины',
+        author: 'Луиза Мэй Олкотт',
+        cover: 'covers/little-women.jpg',
+        description: 'История четырёх сестёр Марч — Мэг, Джо, Бет и Эми — которые растут в Америке Гражданской войны. Книга о семье, дружбе, мечтах и взрослении.',
+        age: '10-12',
+        tags: ['Семья', 'Взросление', 'Романтика', 'Классика'],
+        interests: ['family', 'love', 'friendship'],
+        mood: ['happy', 'romantic'],
+        time: 'medium'
     }
-];
+]; 
