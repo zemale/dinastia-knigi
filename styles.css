@@ -41,54 +41,40 @@ body {
 /* === ШАПКА === */
 .header {
     background: var(--bordeaux);
-    padding: 16px 0;
+    padding: 20px 24px;
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 20px var(--shadow-strong);
-}
-
-.header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-icon {
-    font-size: 2rem;
-}
-
-.logo h1 {
+.site-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--gold);
     letter-spacing: 1px;
+    text-align: center;
+    flex: 1;
 }
 
-/* Мобильное меню */
+/* Меню */
 .menu-toggle {
-    display: none;
-    flex-direction: column;
     background: none;
     border: none;
     cursor: pointer;
     padding: 8px;
     z-index: 101;
+    font-size: 1.5rem;
+    color: var(--gold);
+    transition: transform 0.3s;
 }
 
-.menu-icon {
-    width: 24px;
-    height: 3px;
-    background: var(--gold);
-    margin: 3px 0;
-    transition: all 0.3s;
+.menu-toggle:hover {
+    transform: scale(1.1);
 }
 
 .mobile-menu {
@@ -941,6 +927,10 @@ body {
     
     .nav {
         display: none;
+    }
+    
+    .site-title {
+        font-size: 1.5rem;
     }
     
     .mobile-menu.active {
