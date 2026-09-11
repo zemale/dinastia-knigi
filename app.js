@@ -38,9 +38,9 @@ const questions = [
         id: 'time',
         text: 'Сколько времени готов уделить чтению?',
         options: [
-            { value: 'short', label: '📖 Хочу что-то короткое (повесть)' },
-            { value: 'medium', label: '📚 Средний роман — самое то' },
-            { value: 'long', label: '📚📚📚 Готов к большой книге!' }
+            { value: 'short', label: '📖 Хочу что-то короткое (до 200 стр)' },
+            { value: 'medium', label: '📚 Средний роман (200-400 стр)' },
+            { value: 'long', label: '📚📚📚 Большая книга (400+ стр)' }
         ]
     },
     {
@@ -65,24 +65,8 @@ const questions = [
             { value: 'contemporary', label: '🌍 Современная проза' }
         ]
     },
-    {
-        id: 'pace',
-        text: 'Какой темп чтения тебе нравится?',
-        options: [
-            { value: 'fast', label: '⚡ Быстрый, динамичный' },
-            { value: 'medium', label: '🚶 Умеренный, сбалансированный' },
-            { value: 'slow', label: '🐌 Медленный, вдумчивый' }
-        ]
-    },
-    {
-        id: 'length',
-        text: 'Какой объём книги предпочитаешь?',
-        options: [
-            { value: 'short', label: '📖 Короткие повести (до 200 стр)' },
-            { value: 'medium', label: '📚 Средние романы (200-400 стр)' },
-            { value: 'long', label: '📚📚📚 Толстые книги (400+ стр)' }
-        ]
-    },
+
+
     {
         id: 'setting',
         text: 'Где бы ты хотел(а) оказаться?',
@@ -203,78 +187,53 @@ function restartQuiz() {
 
 // Найти лучшую книгу
 function findBestBook() {
-    // Простая логика подбора
-    const ageScore = answers.age || '13-15';
-    const interestScore = answers.interest || 'fantasy';
+    // Фильтруем книги по возрасту
+    let candidateBooks = books.filter(book => {
+        if (answers.age === '10-12') return book.age === '10-12';
+        if (answers.age === '13-15') return book.age === '13-15';
+        if (answers.age === '16+') return book.age === '16+';
+        return true;
+    });
     
-    // Выбор книги на основе ответов
-    if (ageScore === '10-12') {
-        if (interestScore === 'fantasy') {
-            return {
-                title: 'Гарри Поттер и философский камень',
-                author: 'Дж. К. Роулинг',
-                description: 'Магическое начало невероятного приключения в мире волшебства.',
-                cover: 'covers/harry-potter.jpg',
-                tags: ['фэнтези', 'приключения', 'магия'],
-                age: '10-12'
-            };
-        }
-        return {
-            title: 'Алиса в Стране чудес',
-            author: 'Льюис Кэрролл',
-            description: 'Невероятное путешествие в мир фантазий и удивительных приключений.',
-            cover: 'covers/alice.jpg',
-            tags: ['фэнтези', 'приключения', 'классика'],
-            age: '10-12'
-        };
-    } else if (ageScore === '13-15') {
-        if (interestScore === 'fantasy') {
-            return {
-                title: 'Властелин колец: Братство Кольца',
-                author: 'Дж. Р. Р. Толкин',
-                description: 'Эпическое путешествие в мир Средиземья и битва добра со злом.',
-                cover: 'covers/lotr.jpg',
-                tags: ['фэнтези', 'приключения', 'эпика'],
-                age: '13-15'
-            };
-        } else if (interestScore === 'love') {
-            return {
-                title: 'Гостья',
-                author: 'Стефани Майер',
-                description: 'Романтическая история любви между девушкой и инопланетным существом.',
-                cover: 'covers/guest.jpg',
-                tags: ['романтика', 'фантастика', 'молодёжный'],
-                age: '13-15'
-            };
-        }
-        return {
-            title: 'Голодные игры',
-            author: 'Сьюзен Коллинз',
-            description: 'Острая борьба за выживание в постапокалиптическом мире.',
-            cover: 'covers/hunger.jpg',
-            tags: ['приключения', 'драма', 'антиутопия'],
-            age: '13-15'
-        };
-    } else {
-        if (interestScore === 'philosophy') {
-            return {
-                title: 'Мастер и Маргарита',
-                author: 'Михаил Булгаков',
-                description: 'Философский роман о любви, свободе и искусстве в советской Москве.',
-                cover: 'covers/master.jpg',
-                tags: ['философия', 'классика', 'роман'],
-                age: '16+'
-            };
-        }
-        return {
-            title: '1984',
-            author: 'Джордж Оруэлл',
-            description: 'Антиутопия о тоталитарном обществе и борьбе за свободу мысли.',
-            cover: 'covers/1984.jpg',
-            tags: ['антиутопия', 'философия', 'классика'],
-            age: '16+'
-        };
+    // Если нет книг для возраста, берем все
+    if (candidateBooks.length === 0) {
+        candidateBooks = books;
     }
+    
+    // Считаем баллы на основе интересов
+    candidateBooks.forEach(book => {
+        book.score = 0;
+        
+        // Интересы
+        if (answers.interest && book.interests.includes(answers.interest)) {
+            book.score += 3;
+        }
+        
+        // Настроение
+        if (answers.mood && book.mood.includes(answers.mood)) {
+            book.score += 2;
+        }
+        
+        // Время на чтение
+        if (answers.time && book.time === answers.time) {
+            book.score += 2;
+        }
+        
+        // Дополнительные баллы за совпадение по другим параметрам
+        if (answers.motivation) {
+            if (answers.motivation === 'plot' && book.interests.includes('adventure')) book.score += 1;
+            if (answers.motivation === 'characters' && book.interests.includes('philosophy')) book.score += 1;
+        }
+        
+        if (answers.emotions) {
+            if (answers.emotions === 'joy' && book.mood.includes('happy')) book.score += 1;
+            if (answers.emotions === 'excitement' && book.mood.includes('excited')) book.score += 1;
+        }
+    });
+    
+    // Сортируем по баллам и возвращаем лучшую
+    candidateBooks.sort((a, b) => b.score - a.score);
+    return candidateBooks[0] || books[0];
 }
 
 // Запуск

@@ -335,5 +335,113 @@ const books = [
         interests: ['adventure', 'drama', 'social'],
         mood: ['excited', 'serious'],
         time: 'medium'
+    },
+    {
+        id: 'winnie-pooh',
+        title: 'Винни-Пух',
+        author: 'Алан Милн',
+        cover: 'covers/winnie-pooh.jpg',
+        description: 'Добрая сказка о медвежонке Винни-Пухе и его друзьях: Пятачке, Иа-Иа, Кролике и Сове. Книга о дружбе, взаимопомощи и простых радостях жизни.',
+        age: '10-12',
+        tags: ['Сказка', 'Дружба', 'Юмор', 'Классика'],
+        interests: ['humor', 'friendship', 'adventure'],
+        mood: ['happy', 'calm'],
+        time: 'short'
+    },
+    {
+        id: 'secret-garden',
+        title: 'Таинственный сад',
+        author: 'Фрэнсис Ходжсон Бернетт',
+        cover: 'covers/secret-garden.jpg',
+        description: 'История девочки Мэри, которая находит заброшенный сад и превращает его в цветущий рай. Книга о волшебстве природы, дружбе и преображении.',
+        age: '10-12',
+        tags: ['Приключения', 'Дружба', 'Взросление', 'Классика'],
+        interests: ['adventure', 'friendship', 'nature'],
+        mood: ['happy', 'thoughtful'],
+        time: 'medium'
+    },
+    {
+        id: 'black-beauty',
+        title: 'Чёрный красавец',
+        author: 'Анна Сьюэлл',
+        cover: 'covers/black-beauty.jpg',
+        description: 'История жизни лошади Чёрного Красавца, рассказанная от её лица. Книга о доброте, сострадании и отношении человека к животным.',
+        age: '10-12',
+        tags: ['Приключения', 'Драма', 'Животные', 'Классика'],
+        interests: ['adventure', 'social', 'nature'],
+        mood: ['thoughtful', 'serious'],
+        time: 'medium'
+    },
+    {
+        id: 'treasure-island',
+        title: 'Остров сокровищ',
+        author: 'Роберт Льюис Стивенсон',
+        cover: 'covers/treasure-island.jpg',
+        description: 'Классическое приключение о юном Джиме Хокинсе и его друзьях, которые ищут пиратские сокровища на загадочном острове.',
+        age: '10-12',
+        tags: ['Приключения', 'Пираты', 'Классика', 'Драма'],
+        interests: ['adventure', 'mystery', 'excited'],
+        mood: ['excited', 'happy'],
+        time: 'medium'
+    },
+    {
+        id: 'jungle-book',
+        title: 'Маугли',
+        author: 'Редьярд Киплинг',
+        cover: 'covers/jungle-book.jpg',
+        description: 'История мальчика Маугли, которого воспитали волки в джунглях. Книга о законах природы, дружбе между разными видами и взрослении.',
+        age: '10-12',
+        tags: ['Приключения', 'Животные', 'Фантазия', 'Классика'],
+        interests: ['adventure', 'fantasy', 'nature'],
+        mood: ['excited', 'happy'],
+        time: 'medium'
+    },
+    {
+        id: 'oliver-twist',
+        title: 'Оливер Твист',
+        author: 'Чарльз Диккенс',
+        cover: 'covers/oliver-twist.jpg',
+        description: 'История сироты Оливера Твиста, который попадает в мир лондонских нищих и преступников. Книга о справедливости, сострадании и борьбе за лучшую жизнь.',
+        age: '13-15',
+        tags: ['Драма', 'Социальная справедливость', 'Классика', 'Взросление'],
+        interests: ['social', 'drama', 'philosophy'],
+        mood: ['serious', 'thoughtful'],
+        time: 'medium'
+    },
+    {
+        id: 'picture-dorian-gray',
+        title: 'Портрет Дориана Грея',
+        author: 'Оскар Уайльд',
+        cover: 'covers/dorian-gray.jpg',
+        description: 'Готическая история о молодом человеке, который продаёт душу, чтобы всегда оставаться молодым, а его порт стареет вместо него. Книга о красоте, пороках и нравственности.',
+        age: '16+',
+        tags: ['Готика', 'Философия', 'Классика', 'Драма'],
+        interests: ['philosophy', 'mystery', 'drama'],
+        mood: ['serious', 'thoughtful'],
+        time: 'medium'
+    },
+    {
+        id: 'princess-bride',
+        title: 'Принцесса-невеста',
+        author: 'Уильям Голдинг',
+        cover: 'covers/princess-bride.jpg',
+        description: 'Забавная история о любви, приключениях и борьбе со злодеями. История прекрасной принцессы, храброго юноши и различных необычных персонажей.',
+        age: '10-12',
+        tags: ['Приключения', 'Юмор', 'Романтика', 'Сказка'],
+        interests: ['adventure', 'humor', 'love'],
+        mood: ['happy', 'excited'],
+        time: 'medium'
+    },
+    {
+        id: 'life-pi',
+        title: 'Жизнь Пи',
+        author: 'Ян Мартель',
+        cover: 'covers/life-pi.jpg',
+        description: 'Философская история о мальчике, который выживает в океане на лодке вместе с бенгальским тигром. Книга о вере, надежде и силе духа.',
+        age: '16+',
+        tags: ['Философия', 'Приключения', 'Драма', 'Экзистенциализм'],
+        interests: ['philosophy', 'adventure', 'drama'],
+        mood: ['thoughtful', 'serious'],
+        time: 'medium'
     }
 ];
