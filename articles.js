@@ -768,7 +768,8 @@ const articles = {
 };
 
 // Обработчики для кнопок "Читать"
-document.addEventListener('DOMContentLoaded', function() {
+function initializeEventListeners() {
+    // Обработчики для кнопок "Читать"
     const readMoreButtons = document.querySelectorAll('.read-more');
     
     readMoreButtons.forEach(button => {
@@ -783,7 +784,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Обработчик закрытия модального окна
-    const modalClose = document.querySelector('.modal-close');
+    const modalClose = document.querySelector('#article-modal .modal-close');
     if (modalClose) {
         modalClose.addEventListener('click', closeModal);
     }
@@ -812,7 +813,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Обработчик закрытия модального окна подборок
-    const collectionClose = document.querySelector('.collection-modal .modal-close');
+    const collectionClose = document.querySelector('#collection-modal .modal-close');
     if (collectionClose) {
         collectionClose.addEventListener('click', closeCollectionModal);
     }
@@ -826,7 +827,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-});
+}
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', initializeEventListeners);
+
+// Альтернативная инициализация
+window.addEventListener('load', initializeEventListeners);
 
 // Показать статью в модальном окне
 function showArticle(article) {
