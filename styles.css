@@ -711,6 +711,97 @@ body {
     display: none !important;
 }
 
+/* === КНИЖНЫЕ ПОДБОРКИ === */
+.books-section {
+    padding: 80px 0;
+    background: var(--cream-dark);
+}
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.collection-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 20px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.collection-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px var(--shadow-strong);
+}
+
+.collection-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.collection-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--bordeaux);
+}
+
+.collection-card p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.books-list {
+    margin-top: 24px;
+    text-align: left;
+}
+
+.book-item {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-left: 4px solid var(--gold);
+}
+
+.book-item h4 {
+    color: var(--bordeaux);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.book-item p {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* === МОДАЛЬНЫЕ ОКНА ДЛЯ ПОДБОРОК === */
+#collection-modal .modal-content {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 32px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px var(--shadow-strong);
+}
+
+#collection-modal h3 {
+    color: var(--bordeaux);
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+#collection-modal .book-item {
+    border-left: 4px solid var(--gold);
+}
+
 /* === АДАПТИВ === */
 @media (max-width: 768px) {
     .hero-title {
@@ -747,5 +838,23 @@ body {
     .result-book-cover {
         width: 150px;
         height: 225px;
+    }
+    
+    .collections-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .collection-card {
+        padding: 20px;
+    }
+    
+    .collection-icon {
+        font-size: 2.5rem;
+    }
+    
+    #collection-modal .modal-content {
+        margin: 20px;
+        padding: 24px;
     }
 }

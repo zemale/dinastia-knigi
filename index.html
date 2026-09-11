@@ -19,6 +19,7 @@
             <nav class="nav">
                 <a href="#test" class="nav-link">Тест</a>
                 <a href="#articles" class="nav-link">Статьи</a>
+                <a href="#collections" class="nav-link">Подборки</a>
                 <a href="#about" class="nav-link">О проекте</a>
             </nav>
         </div>
@@ -127,49 +128,70 @@
                     <p>Советы, чтобы не бросать книги на полпути</p>
                     <button class="btn btn-secondary read-more">Читать</button>
                 </article>
+            </div>
+            
+            <!-- Отдельный раздел для книжных подборок -->
+            <div class="books-section">
+                <h2 class="section-title">📚 Книжные подборки</h2>
+                <p class="section-subtitle">Выбери тему, которая тебе интересна</p>
                 
-                <!-- Книжные подборки -->
-                <article class="article-card" data-article="love">
-                    <div class="article-icon">💕</div>
-                    <h3>Книги о настоящей любви</h3>
-                    <p>Подборка книг о глубокой и настоящей любви</p>
-                    <button class="btn btn-secondary read-more">Читать</button>
-                </article>
-                
-                <article class="article-card" data-article="animals">
-                    <div class="article-icon">🐾</div>
-                    <h3>Книги для тех, кто любит животных</h3>
-                    <p>Истории о дружбе с животными и природе</p>
-                    <button class="btn btn-secondary read-more">Читать</button>
-                </article>
-                
-                <article class="article-card" data-article="dystopia">
-                    <div class="article-icon">🔥</div>
-                    <h3>Лучшие антиутопии</h3>
-                    <p>Книги о тоталитарных обществах и борьбе за свободу</p>
-                    <button class="btn btn-secondary read-more">Читать</button>
-                </article>
-                
-                <article class="article-card" data-article="classics">
-                    <div class="article-icon">📖</div>
-                    <h3>Лучшая классическая литература</h3>
-                    <p>Вечные произведения, пережившие века</p>
-                    <button class="btn btn-secondary read-more">Читать</button>
-                </article>
-                
-                <article class="article-card" data-article="selfhelp">
-                    <div class="article-icon">🌱</div>
-                    <h3>Что почитать для саморазвития</h3>
-                    <p>Книги, которые помогут стать лучше</p>
-                    <button class="btn btn-secondary read-more">Читать</button>
-                </article>
-                
-                <article class="article-card" data-article="mystery">
-                    <div class="article-icon">🔮</div>
-                    <h3>Книги с загадочной атмосферой</h3>
-                    <p>Мистические истории и тайны</p>
-                    <button class="btn btn-secondary read-more">Читать</button>
-                </article>
+                <div class="collections-grid">
+                    <div class="collection-card" data-collection="love">
+                        <div class="collection-icon">💕</div>
+                        <h3>Книги о настоящей любви</h3>
+                        <p>Глубокие истории о чувствах и отношениях</p>
+                        <button class="btn btn-secondary view-collection">Посмотреть подборку</button>
+                    </div>
+                    
+                    <div class="collection-card" data-collection="animals">
+                        <div class="collection-icon">🐾</div>
+                        <h3>Книги для любителей животных</h3>
+                        <p>Истории о дружбе с животными и природе</p>
+                        <button class="btn btn-secondary view-collection">Посмотреть подборку</button>
+                    </div>
+                    
+                    <div class="collection-card" data-collection="dystopia">
+                        <div class="collection-icon">🔥</div>
+                        <h3>Лучшие антиутопии</h3>
+                        <p>Книги о тоталитарных обществах и борьбе за свободу</p>
+                        <button class="btn btn-secondary view-collection">Посмотреть подборку</button>
+                    </div>
+                    
+                    <div class="collection-card" data-collection="classics">
+                        <div class="collection-icon">📖</div>
+                        <h3>Классическая литература</h3>
+                        <p>Вечные произведения, пережившие века</p>
+                        <button class="btn btn-secondary view-collection">Посмотреть подборку</button>
+                    </div>
+                    
+                    <div class="collection-card" data-collection="selfhelp">
+                        <div class="collection-icon">🌱</div>
+                        <h3>Саморазвитие</h3>
+                        <p>Книги, которые помогут стать лучше</p>
+                        <button class="btn btn-secondary view-collection">Посмотреть подборку</button>
+                    </div>
+                    
+                    <div class="collection-card" data-collection="mystery">
+                        <div class="collection-icon">🔮</div>
+                        <h3>Мистика и тайны</h3>
+                        <p>Книги с загадочной атмосферой</p>
+                        <button class="btn btn-secondary view-collection">Посмотреть подборку</button>
+                    </div>
+                    
+                    <div class="collection-card" data-collection="school">
+                        <div class="collection-icon">🏫</div>
+                        <h3>Школа и учеба</h3>
+                        <p>Истории о школьной жизни и взрослении</p>
+                        <button class="btn btn-secondary view-collection">Посмотреть подборку</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="collection-modal" class="modal hidden">
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <div id="collection-body"></div>
+                </div>
             </div>
             
             <div id="article-modal" class="modal hidden">

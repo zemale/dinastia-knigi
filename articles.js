@@ -1,3 +1,217 @@
+// Книжные коллекции
+const collections = {
+    love: {
+        title: "Книги о настоящей любви",
+        content: `
+            <h3>📚 Подборка книг о настоящей любви</h3>
+            <p>Настоящая любовь в литературе - это глубокие чувства, преданность, взаимопонимание и готовность жертвовать ради другого человека.</p>
+            
+            <div class="books-list">
+                <div class="book-item">
+                    <h4>Гордость и предубеждение</h4>
+                    <p><strong>Джейн Остин</strong> - История любви Элизабет и Дарси, преодолевшего гордость и предубеждения</p>
+                </div>
+                <div class="book-item">
+                    <h4>Мастер и Маргарита</h4>
+                    <p><strong>Михаил Булгаков</strong> - Трагическая история любви Мастера и Маргариты, способной противостоять всему миру</p>
+                </div>
+                <div class="book-item">
+                    <h4>Тень ветра</h4>
+                    <p><strong>Карлос Руис Сафон</strong> - Мистическая история любви, способной преодолеть время и смерть</p>
+                </div>
+                <div class="book-item">
+                    <h4>Убить пересмешника</h4>
+                    <p><strong>Харпер Ли</strong> - История любви к справедливости и человеческого достоинства</p>
+                </div>
+                <div class="book-item">
+                    <h4>Маленький принц</h4>
+                    <p><strong>Антуан де Сент-Экзюпери</strong> - Философская сказка о любви и дружбе</p>
+                </div>
+            </div>
+        `
+    },
+    animals: {
+        title: "Книги для тех, кто любит животных",
+        content: `
+            <h3>🐾 Подборка книг о животных</h3>
+            <p>Книги о животных учат доброте, ответственности и взаимопониманию. Они показывают, что животные - это настоящие друзья с чувствами и характером.</p>
+            
+            <div class="books-list">
+                <div class="book-item">
+                    <h4>Чёрный красавец</h4>
+                    <p><strong>Анна Сьюэлл</strong> - История жизни лошади, рассказанная от её лица</p>
+                </div>
+                <div class="book-item">
+                    <h4>Маугли</h4>
+                    <p><strong>Редьярд Киплинг</strong> - История мальчика, которого воспитали волки</p>
+                </div>
+                <div class="book-item">
+                    <h4>Винни-Пух</h4>
+                    <p><strong>Алан Милн</strong> - Добрые истории о медвежонке и его друзьях</p>
+                </div>
+                <div class="book-item">
+                    <h4>Дом духов</h4>
+                    <p><strong>Исабель Альенде</strong> - Магические животные в латиноамериканской саге</p>
+                </div>
+                <div class="book-item">
+                    <h4>Хоббит</h4>
+                    <p><strong>Дж. Р. Р. Толкин</strong> - Дракон Смауг и другие волшебные существа</p>
+                </div>
+            </div>
+        `
+    },
+    dystopia: {
+        title: "Лучшие антиутопии",
+        content: `
+            <h3>🔥 Подборка лучших антиутопий</h3>
+            <p>Антиутопии - это вымышленные общества, которые кажутся идеальными, но имеют серьёзные проблемы. Эти книги заставляют задуматься о свободе и справедливости.</p>
+            
+            <div class="books-list">
+                <div class="book-item">
+                    <h4>1984</h4>
+                    <p><strong>Джордж Оруэлл</strong> - Мир тотального контроля и слежки</p>
+                </div>
+                <div class="book-item">
+                    <h4>О дивный новый мир</h4>
+                    <p><strong>Олдос Хаксли</strong> - Общество счастья через контроль и развлечения</p>
+                </div>
+                <div class="book-item">
+                    <h4>Скотный двор</h4>
+                    <p><strong>Джордж Оруэлл</strong> - Сатирическая сказка о власти и коррупции</p>
+                </div>
+                <div class="book-item">
+                    <h4>Голодные игры</h4>
+                    <p><strong>Сьюзен Коллинз</strong> - Борьба за выживание в тоталитарном обществе</p>
+                </div>
+                <div class="book-item">
+                    <h4>Fahrenheit 451</h4>
+                    <p><strong>Рэй Брэдбери</strong> - Мир, где книги запрещены и сжигаются</p>
+                </div>
+            </div>
+        `
+    },
+    classics: {
+        title: "Лучшая классическая литература",
+        content: `
+            <h3>📖 Подборка классической литературы</h3>
+            <p>Классическая литература переживает века, потому что говорит о вечных темах: любви, дружбе, справедливости, поиске смысла жизни.</p>
+            
+            <div class="books-list">
+                <div class="book-item">
+                    <h4>Война и мир</h4>
+                    <p><strong>Лев Толстой</strong> - Эпическая о жизни русских дворян</p>
+                </div>
+                <div class="book-item">
+                    <h4>Преступление и наказание</h4>
+                    <p><strong>Фёдор Достоевский</strong> - Психологическая драма о совести и искуплении</p>
+                </div>
+                <div class="book-item">
+                    <h4>Дон Кихот</h4>
+                    <p><strong>Мигель де Сервантес</strong> - История о мечтах и реальности</p>
+                </div>
+                <div class="book-item">
+                    <h4>Гроза</h4>
+                    <p><strong>Александр Островский</strong> - Драма о борьбе за свободу</p>
+                </div>
+                <div class="book-item">
+                    <h4>Анна Каренина</h4>
+                    <p><strong>Лев Толстой</strong> - Трагическая история любви и предательства</p>
+                </div>
+            </div>
+        `
+    },
+    selfhelp: {
+        title: "Что почитать для саморазвития",
+        content: `
+            <h3>🌱 Подборка книг для саморазвития</h3>
+            <p>Книги для саморазвития помогают лучше понять себя, найти цель в жизни, развить навыки и стать лучше.</p>
+            
+            <div class="books-list">
+                <div class="book-item">
+                    <h4>Алхимик</h4>
+                    <p><strong>Пауло Коэльо</strong> - Философская притча о поиске своего пути</p>
+                </div>
+                <div class="book-item">
+                    <h4>Маленький принц</h4>
+                    <p><strong>Антуан де Сент-Экзюпери</strong> - Уроки жизни и дружбы</p>
+                </div>
+                <div class="book-item">
+                    <h4>Сиддхартха</h4>
+                    <p><strong>Герман Гессе</strong> - Духовный поиск и самопознание</p>
+                </div>
+                <div class="book-item">
+                    <h4>Жизнь Пи</h4>
+                    <p><strong>Ян Мартель</strong> - История силы духа и веры</p>
+                </div>
+                <div class="book-item">
+                    <h4>Портрет Дориана Грея</h4>
+                    <p><strong>Оскар Уайльд</strong> - Размышления о красоте и морали</p>
+                </div>
+            </div>
+        `
+    },
+    mystery: {
+        title: "Книги с загадочной атмосферой",
+        content: `
+            <h3>🔮 Подборка мистических книг</h3>
+            <p>Книги с загадочной атмосферой погружают в мир тайн, необъяснимых явлений и скрытых смыслов.</p>
+            
+            <div class="books-list">
+                <div class="book-item">
+                    <h4>Мастер и Маргарита</h4>
+                    <p><strong>Михаил Булгаков</strong> - Мистическая история о Воланде и его свите</p>
+                </div>
+                <div class="book-item">
+                    <h4>Тень ветра</h4>
+                    <p><strong>Карлос Руис Сафон</strong> - Тайны "Кладбища забытых книг"</p>
+                </div>
+                <div class="book-item">
+                    <h4>Франкенштейн</h4>
+                    <p><strong>Мэри Шелли</strong> - Готическая история о создании жизни</p>
+                </div>
+                <div class="book-item">
+                    <h4>Странный случай доктора Джекилла</h4>
+                    <p><strong>Роберт Льюис Стивенсон</strong> - Двойственность человеческой натуры</p>
+                </div>
+                <div class="book-item">
+                    <h4>Шерлок Холмс</h4>
+                    <p><strong>Артур Конан Дойль</strong> - Логика и дедукция в раскрытии тайн</p>
+                </div>
+            </div>
+        `
+    },
+    school: {
+        title: "Книги о школе и учебе",
+        content: `
+            <h3>🏫 Подборка книг о школе</h3>
+            <p>Книги о школе показывают не только уроки и экзамены, но и дружбу, взросление, поиски себя и первые взрослые решения.</p>
+            
+            <div class="books-list">
+                <div class="book-item">
+                    <h4>Гарри Поттер</h4>
+                    <p><strong>Дж. К. Роулинг</strong> - Школа волшебства Хогвартс и дружба учеников</p>
+                </div>
+                <div class="book-item">
+                    <h4>Маленькие женщины</h4>
+                    <p><strong>Луиза Мэй Олкотт</strong> - Жизнь четырёх сестёр во время Гражданской войны</p>
+                </div>
+                <div class="book-item">
+                    <h4>Над пропастью во ржи</h4>
+                    <p><strong>Джером Сэлинджер</strong> - Взгляд подростка на школу и взрослый мир</p>
+                </div>
+                <div class="book-item">
+                    <h4>Перси Джексон</h4>
+                    <p><strong>Рик Риордан</strong> - Школа для полубогов, изучающих мифологию</p>
+                </div>
+                <div class="book-item">
+                    <h4>Оливер Твист</h4>
+                    <p><strong>Чарльз Диккенс</strong> - Сложная жизнь сироты в мире несправедливости</p>
+                </div>
+            </div>
+        `
+    }
+};
+
 // Контент статей
 const articles = {
     // Книжные подборки
@@ -583,6 +797,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Обработчики для кнопок просмотра подборок
+    const viewCollectionButtons = document.querySelectorAll('.view-collection');
+    viewCollectionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const collectionCard = this.closest('.collection-card');
+            const collectionId = collectionCard.dataset.collection;
+            
+            if (collections[collectionId]) {
+                showCollection(collectionId);
+            }
+        });
+    });
+    
+    // Обработчик закрытия модального окна подборок
+    const collectionClose = document.querySelector('.collection-modal .modal-close');
+    if (collectionClose) {
+        collectionClose.addEventListener('click', closeCollectionModal);
+    }
+    
+    // Закрытие по клику вне модального окна подборок
+    const collectionModal = document.getElementById('collection-modal');
+    if (collectionModal) {
+        collectionModal.addEventListener('click', function(e) {
+            if (e.target === collectionModal) {
+                closeCollectionModal();
+            }
+        });
+    }
 });
 
 // Показать статью в модальном окне
@@ -597,6 +840,32 @@ function showArticle(article) {
         `;
         
         modal.classList.remove('hidden');
+    }
+}
+
+// Показать коллекцию в модальном окне
+function showCollection(collectionId) {
+    const collection = collections[collectionId];
+    if (!collection) return;
+    
+    const modal = document.getElementById('collection-modal');
+    const collectionBody = document.getElementById('collection-body');
+    
+    if (modal && collectionBody) {
+        collectionBody.innerHTML = `
+            <h3>${collection.title}</h3>
+            ${collection.content}
+        `;
+        
+        modal.classList.remove('hidden');
+    }
+}
+
+// Закрыть модальное окно коллекции
+function closeCollectionModal() {
+    const modal = document.getElementById('collection-modal');
+    if (modal) {
+        modal.classList.add('hidden');
     }
 }
 
