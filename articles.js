@@ -769,16 +769,22 @@ const articles = {
 
 // Обработчики для кнопок "Читать"
 function initializeEventListeners() {
+    console.log('Initializing event listeners...');
+    
     // Обработчики для кнопок "Читать"
     const readMoreButtons = document.querySelectorAll('.read-more');
+    console.log('Found read-more buttons:', readMoreButtons.length);
     
     readMoreButtons.forEach(button => {
         button.addEventListener('click', function() {
+            console.log('Read more button clicked');
             const articleCard = this.closest('.article-card');
             const articleId = articleCard.dataset.article;
             
             if (articles[articleId]) {
                 showArticle(articles[articleId]);
+            } else {
+                console.log('Article not found:', articleId);
             }
         });
     });
@@ -801,13 +807,18 @@ function initializeEventListeners() {
     
     // Обработчики для кнопок просмотра подборок
     const viewCollectionButtons = document.querySelectorAll('.view-collection');
+    console.log('Found view-collection buttons:', viewCollectionButtons.length);
+    
     viewCollectionButtons.forEach(button => {
         button.addEventListener('click', function() {
+            console.log('View collection button clicked');
             const collectionCard = this.closest('.collection-card');
             const collectionId = collectionCard.dataset.collection;
             
             if (collections[collectionId]) {
                 showCollection(collectionId);
+            } else {
+                console.log('Collection not found:', collectionId);
             }
         });
     });
@@ -830,13 +841,22 @@ function initializeEventListeners() {
 }
 
 // Инициализация при загрузке страницы
-document.addEventListener('DOMContentLoaded', initializeEventListeners);
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM content loaded');
+    console.log('Collections available:', typeof collections !== 'undefined' && Object.keys(collections).length > 0);
+    console.log('Articles available:', typeof articles !== 'undefined' && Object.keys(articles).length > 0);
+    initializeEventListeners();
+});
 
 // Альтернативная инициализация
-window.addEventListener('load', initializeEventListeners);
+window.addEventListener('load', function() {
+    console.log('Window loaded');
+    initializeEventListeners();
+});
 
 // Показать статью в модальном окне
 function showArticle(article) {
+    console.log('Showing article:', article);
     const modal = document.getElementById('article-modal');
     const articleBody = document.getElementById('article-body');
     
@@ -847,13 +867,20 @@ function showArticle(article) {
         `;
         
         modal.classList.remove('hidden');
+        console.log('Article modal opened');
+    } else {
+        console.log('Modal or article body not found');
     }
 }
 
 // Показать коллекцию в модальном окне
 function showCollection(collectionId) {
+    console.log('Showing collection:', collectionId);
     const collection = collections[collectionId];
-    if (!collection) return;
+    if (!collection) {
+        console.log('Collection not found:', collectionId);
+        return;
+    }
     
     const modal = document.getElementById('collection-modal');
     const collectionBody = document.getElementById('collection-body');
@@ -865,6 +892,9 @@ function showCollection(collectionId) {
         `;
         
         modal.classList.remove('hidden');
+        console.log('Collection modal opened:', collection.title);
+    } else {
+        console.log('Collection modal or body not found');
     }
 }
 
