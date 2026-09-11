@@ -72,6 +72,82 @@ body {
     letter-spacing: 1px;
 }
 
+/* Мобильное меню */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 101;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 3px;
+    background: var(--gold);
+    margin: 3px 0;
+    transition: all 0.3s;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bordeaux-dark);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.mobile-menu.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.mobile-nav-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Cormorant Garamond', serif;
+    position: relative;
+    padding: 10px 20px;
+    transition: all 0.3s;
+}
+
+.mobile-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+
+.mobile-nav-link:hover::after {
+    width: 80%;
+}
+
 .nav {
     display: flex;
     gap: 32px;
@@ -856,5 +932,18 @@ body {
     #collection-modal .modal-content {
         margin: 20px;
         padding: 24px;
+    }
+    
+    /* Мобильное меню */
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav {
+        display: none;
+    }
+    
+    .mobile-menu.active {
+        display: flex;
     }
 }
