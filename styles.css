@@ -1113,6 +1113,76 @@ body {
     transform: rotate(5deg);
 }
 
+/* === ГАЛЕРЕЯ ФОТОГРАФИЙ КНИЖНОГО КЛУБА === */
+.club-photos {
+    padding: 80px 0;
+    background: var(--cream-dark);
+}
+
+.photo-gallery {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.photo-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--white);
+}
+
+.photo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow-strong);
+}
+
+.photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(114, 47, 55, 0.9), transparent);
+    color: var(--gold-pale);
+    padding: 20px 16px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.photo-note {
+    text-align: center;
+    background: rgba(201, 162, 39, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    border: 2px dashed var(--gold);
+}
+
+.photo-note p {
+    color: var(--bordeaux);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.photo-note strong {
+    color: var(--gold);
+}
+
 /* Адаптивность для баннера книжного клуба */
 @media (max-width: 768px) {
     .club-content {
@@ -1140,5 +1210,19 @@ body {
     
     .club-book {
         font-size: 2.5rem;
+    }
+    
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .photo {
+        height: 200px;
+    }
+    
+    .photo-caption {
+        font-size: 0.9rem;
+        padding: 16px 12px 12px;
     }
 }
