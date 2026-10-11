@@ -1090,36 +1090,27 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 0 8px 25px var(--shadow-strong);
-    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.club-book:hover {
+    transform: translateY(-10px) scale(1.1);
 }
 
 .club-book-1 {
-    animation-delay: 0s;
     transform: rotate(-5deg);
 }
 
 .club-book-2 {
-    animation-delay: 0.5s;
     transform: rotate(3deg);
 }
 
 .club-book-3 {
-    animation-delay: 1s;
     transform: rotate(-3deg);
 }
 
 .club-book-4 {
-    animation-delay: 1.5s;
     transform: rotate(5deg);
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px) rotate(var(--rotation, 0deg));
-    }
-    50% {
-        transform: translateY(-20px) rotate(var(--rotation, 0deg));
-    }
 }
 
 /* Адаптивность для баннера книжного клуба */
