@@ -47,8 +47,9 @@ body {
     z-index: 100;
     box-shadow: 0 2px 20px var(--shadow-strong);
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    min-height: 80px;
 }
 
 .site-title {
@@ -58,7 +59,11 @@ body {
     color: var(--gold);
     letter-spacing: 1px;
     text-align: center;
-    flex: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
 }
 
 /* Меню */
@@ -66,15 +71,40 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
+    padding: 12px;
     z-index: 101;
-    font-size: 1.5rem;
-    color: var(--gold);
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
     transition: transform 0.3s;
 }
 
 .menu-toggle:hover {
-    transform: scale(1.1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Иконка меню из трех полосок */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 24px;
+    height: 18px;
+    position: relative;
+}
+
+.menu-icon span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover .menu-icon span {
+    background: var(--gold-light);
 }
 
 .mobile-menu {
@@ -88,7 +118,13 @@ body {
     z-index: 200;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
 }
 
 .mobile-menu.active {
@@ -935,5 +971,183 @@ body {
     
     .mobile-menu.active {
         display: flex;
+    }
+    
+    .menu-icon {
+        width: 20px;
+        height: 16px;
+    }
+    
+    .menu-icon span {
+        height: 2px;
+    }
+}
+
+/* === БАННЕР КНИЖНОГО КЛУБА === */
+.club-banner {
+    background: linear-gradient(135deg, var(--bordeaux-dark) 0%, var(--bordeaux) 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.club-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20" fill="%23F4E4BC" opacity="0.1">📚</text></svg>') repeat;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.club-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.club-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 24px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.club-description {
+    font-size: 1.2rem;
+    color: var(--gold-pale);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.club-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.club-detail {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.club-detail:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.club-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.club-detail strong {
+    color: var(--gold);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.club-detail div {
+    color: var(--gold-pale);
+    line-height: 1.5;
+}
+
+.club-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.club-books {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 240px;
+}
+
+.club-book {
+    font-size: 3rem;
+    background: var(--gold);
+    color: var(--bordeaux-dark);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px var(--shadow-strong);
+    animation: float 3s ease-in-out infinite;
+}
+
+.club-book-1 {
+    animation-delay: 0s;
+    transform: rotate(-5deg);
+}
+
+.club-book-2 {
+    animation-delay: 0.5s;
+    transform: rotate(3deg);
+}
+
+.club-book-3 {
+    animation-delay: 1s;
+    transform: rotate(-3deg);
+}
+
+.club-book-4 {
+    animation-delay: 1.5s;
+    transform: rotate(5deg);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(var(--rotation, 0deg));
+    }
+    50% {
+        transform: translateY(-20px) rotate(var(--rotation, 0deg));
+    }
+}
+
+/* Адаптивность для баннера книжного клуба */
+@media (max-width: 768px) {
+    .club-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .club-title {
+        font-size: 2.2rem;
+    }
+    
+    .club-details {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .club-detail {
+        padding: 20px;
+    }
+    
+    .club-books {
+        max-width: 200px;
+    }
+    
+    .club-book {
+        font-size: 2.5rem;
     }
 }
